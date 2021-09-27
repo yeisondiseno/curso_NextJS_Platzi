@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar"
 
 const Home = () => {
   // data
-  const [ productList, setProductList ] = useState([])
+  const [ productList, setProductList ] = useState<TProduct>([])
   
   console.log('productList', productList)
   useEffect(() => {
