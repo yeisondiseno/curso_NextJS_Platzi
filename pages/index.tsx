@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
 // components
-import Navbar from "../components/Navbar/Navbar"
+
 
 const Home = () => {
   // data
   const [ productList, setProductList ] = useState<TProduct>([])
   
-  console.log('productList', productList)
   useEffect(() => {
     fetch('api/avo')
       .then(res => res.json())
@@ -18,7 +17,6 @@ const Home = () => {
 
   return(
     <div >
-      <Navbar />
       <h1>
         Hola Mundo adwdawd ad 
       </h1>
