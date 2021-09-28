@@ -1,6 +1,8 @@
 import { AppProps } from 'next/app'
+// import '../style.css' // global css
 // components 
 import Layout from '@components/Layout/Layout'
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   // aquí se pueden inyectar los context, providers o layout 
