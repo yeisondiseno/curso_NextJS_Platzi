@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react"
 // components
 
-
 const Home = () => {
   // data
-  const [ productList, setProductList ] = useState<TProduct>([])
+  const [ productList, setProductList ] = useState<TProduct[]>([])
   
   useEffect(() => {
     fetch('api/avo')

@@ -2,13 +2,12 @@ import { useEffect, useState } from "react"
 // router
 import { useRouter } from 'next/router'
 
-
 const ProductItem = () => {
   // route
   const { query: { id } } = useRouter()
 
   // data
-  const [ product, setProduct ] = useState<TProduct[]>([])
+  const [ product, setProduct ] = useState<TProduct>()
 
   console.log('product', product, 'id', id)
 
