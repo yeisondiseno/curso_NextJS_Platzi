@@ -1,0 +1,36 @@
+/**
+* Hi curious student! :)
+* This a CSS Trick to keep the footer at the bottom.
+* Find out more modern CSS tricks at:
+* https://moderncss.dev/
+*/
+
+/* variables  */
+
+:root{
+  --maxWidth: 1100px;
+  --gray: rgb(202, 202, 202);
+  --gray-soft: rgba(128, 128, 128, 0.137);
+  --white: #fff;
+}
+
+html{
+  padding: 0;
+  width: 100vw;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+#__next {
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+#__next > .container {
+  margin: 1rem auto 0;
+  max-width: 80vw;
+}
