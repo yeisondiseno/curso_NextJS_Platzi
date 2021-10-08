@@ -1,35 +1,29 @@
-import { useEffect, useState } from "react"
-// router
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import fetch from 'isomorphic-unfetch'
 
+import Layout from '@components/Layout/Layout'
+import ProductSummary from '@components/ProductSummary/ProductSummary'
 
-const ProductItem = () => {
-  // route
-  const { query: { id } } = useRouter()
-
-  // data
-  const [ product, setProduct ] = useState<TProduct[]>([])
-
-  console.log('product', product, 'id', id)
+const ProductPage = () => {
+  const { query } = useRouter()
+  const [product, setProduct] = useState<TProduct | null>(null)
 
   useEffect(() => {
-    if(!id) return
-    fetch(`/api/avo/${id}`)
-      .then(res => res.json())
-      .then( data => setProduct(data))
-      .catch( error => console.error('Este es error', error) )
-  }, [id])
+    if (query.id) {
+      fetch(`/api/avo/${query.id}`)
+        .then((response) => response.json())
+        .then((data: TProduct) => {
+          setProduct(data)
+        })
+    }
+  }, [query.id])
 
-  return(
-    <div>
-      <h4>
-        Hola  soy un producto: {id}
-      </h4>
-      <div>
-        {product?.name}
-      </div>
-    </div>
+  return (
+    <Layout>
+      {product == null ? null : <ProductSummary product={product} />}
+    </Layout>
   )
-} 
+}
 
-export default ProductItem
+export default ProductPage
