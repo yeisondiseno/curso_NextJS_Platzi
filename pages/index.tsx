@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react'
+// components 
 import Layout from '@components/Layout/Layout'
 import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
 import ProductList from '@components/ProductList/ProductList'
+// libraries
+import fetch from 'isomorphic-unfetch'
 
-const HomePage = () => {
-  const [productList, setProductList] = useState<TProduct[]>([])
+export const getStaticProps = async () => {
+  const response = await fetch('https://curso-next-js-platzi.vercel.app/api/avo')
+  const { data } : TAPIAvoResponse = await response.json()
+  return {
+    props: {
+      productList: data
+    }
+  }
+}
 
-  useEffect(() => {
-    window
-      .fetch('/api/avo')
-      .then((response) => response.json())
-      .then(({ data }: TAPIAvoResponse) => {
-        setProductList(data)
-      })
-  }, [])
-
+const HomePage = ({productList}: { productList: TProduct[] }) => {
   return (
     <Layout>
       <KawaiiHeader />
