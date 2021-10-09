@@ -7,6 +7,7 @@ import CartProvider from '@store/Cart'
 // performance report 
 export function reportWebVitals (metric: any) {
   console.log('metric', metric)
+  // https://platzi.com/clases/1991-next/30623-mide-performance-en-nextjs/
 }
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
