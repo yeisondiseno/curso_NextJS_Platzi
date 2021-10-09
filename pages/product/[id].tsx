@@ -1,5 +1,4 @@
 // next
-import { useRouter } from 'next/router'
 import { GetStaticProps } from 'next'
 // libraries
 import fetch from 'isomorphic-unfetch'
