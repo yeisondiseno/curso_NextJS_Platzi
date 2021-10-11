@@ -10,7 +10,7 @@ type ProductListProps = {
 
 const mapProductsToCards = (products: TProduct[]) =>
   products.map(({ name, id, price, image }) => (
-    <Link key={id} href="/product/[id]" as={`/product/${id}`} passHref>
+    <Link key={id} href={`/product/${id}`} passHref>
       <div className={style.product_card}>
         <Image alt={name} src={image} width={333} height={333} />
         <hr />
