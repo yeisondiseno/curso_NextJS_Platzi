@@ -1,0 +1,32 @@
+
+
+.product{
+  display: grid;
+  grid-template-columns: repeat( 3, 1fr );
+  grid-gap: 15px;
+}
+
+.product_card{
+  background-color: #fff;
+  padding: 1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  border: solid 1px transparent;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.product_card:hover{
+  box-shadow: none;
+  border: solid 1px #eee;
+}
+
+.product_card p {
+  color: rgb(129, 129, 129);
+}
+
+.product_card hr {
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  border: solid 1px #eee;
+}
